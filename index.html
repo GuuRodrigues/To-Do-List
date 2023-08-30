@@ -3,69 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do-List</title>
     <link rel="stylesheet" href="CSS/style.css">
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="JS/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,700&display=swap" rel="stylesheet">
+    <title>todo-list</title>
 </head>
 <body>
-    <div class="todo-container">
-        <header>
-            <h1>Todo Avançado</h1>
-        </header>
-        <form id="todo-form">
-            <p>Adicione a sua tarefa:</p>
-            <div class="form-control">
-                <input type="text" id="todo-input" placeholder="O que voce vai fazer?">
-                <button type="submit">
-                    <i class="fa-thin fa-plus"></i>
-                </button>
-            </div>
-        </form>
-        <form id="edit-form" class="hide">
-            <p>Edite a sua tarefa:</p>
-            <div class="form-control">
-                <input type="text" id="edit-input">
-                <button type="submit">
-                    <i class="fa-solid fa-check-double"></i>
-                </button>
-            </div>
-            <button id="cancel-edit-btn">Cancelar</button>
-        </form>
-        <div id="toolbar">
-            <div id="search">
-                <h4>Pesquisar:</h4>
-                <form>
-                    <input type="text" id="search-input" placeholder="Buscar">
-                    <button id="erase-button">
-                        <i class="fa-solid fa-delete-left"></i>
-                    </button>
-                </form>
-            </div>
-            <div id="filter">
-                <h4>Filtrar:</h4>
-                <select id="filter-select">
-                    <option value="all">Todos</option>
-                    <option value="done">Feitos</option>
-                    <option value="todo">A fazer</option>
-                </select>
-            </div>
+    <h1>To Do List | AR</h1>
+    <div class="content">
+        <div class="content-add-item">
+            <input type="text" id="input-new-task" placeholder="Digite sua nova task">
+            <button onclick="newTask()" id="btn-new-task" title="Clique aqui para adicionar uma nova task">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard2-plus-fill" viewBox="0 0 16 16">
+                    <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"/>
+                    <path d="M4.085 1H3.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1h-.585c.055.156.085.325.085.5V2a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 2v-.5c0-.175.03-.344.085-.5ZM8.5 6.5V8H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V9H6a.5.5 0 0 1 0-1h1.5V6.5a.5.5 0 0 1 1 0Z"/>
+                  </svg>
+            </button>
         </div>
-        <div id="todo-list">
-            <div class="todo done">
-                <h3>Estou fazendo alguma coisa...</h3>
-                <button class="finish-todo">
-                    <i class="fa-solid fa-check"></i>
-                </button>
-                <button class="edit-todo">
-                    <i class="fa-solid fa-pen"></i>
-                </button>
-                <button class="remove-todo">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
+        <div class="content-body">
+            <ul id="to-do-list">
+
+            </ul>
         </div>
     </div>
 </body>
+<script src="JS/script.js"></script>
 </html>
